@@ -40,7 +40,7 @@ public class RecyclerViewItemView extends ConstraintLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        mTextView = findViewById(R.id.tv);
+        mTextView = (TextView) findViewById(R.id.tv);
     }
 
     public TextView getTextView() {

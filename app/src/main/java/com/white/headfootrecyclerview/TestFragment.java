@@ -45,7 +45,7 @@ public class TestFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mRecyclerView = view.findViewById(R.id.recycler);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler);
     }
 
     @Override
