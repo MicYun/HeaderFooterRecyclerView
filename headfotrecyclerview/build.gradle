@@ -45,7 +45,7 @@ def gitUrl = 'https://github.com/MicYun/HeaderFooterRecyclerView.git'   // Git�
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
-version = "0.0.1" //发布版本号
+version = "0.0.2" //发布版本号
 group = "com.run" //最终引用形式，如compile 'com.leon.lfilepicker:1.0.0'，其中lfilepicker在后面配置
 
 bintray {
@@ -61,11 +61,16 @@ bintray {
         publish = true // 是否是公开项目，公开别人可以引用
 
         version {
-            name = '0.0.1'
+            name = '0.0.2'
             desc = 'head foot view recyclerview'//描述，自己定义
             released  = new Date()
-            vcsTag = 'v0.0.1'
+            vcsTag = 'v0.0.2'
             attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+
+            gpg {
+                sign = true
+                passphrase = properties.getProperty("signing.password")
+            }
         }
     }
     configurations = ['archives']
